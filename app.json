@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Quran Kareem",
+    "slug": "quran-kareem",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/favicon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-screen.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F5E6CA"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/favicon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.engmohamed.qurankareem"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "43fed61c-5957-483a-bbd8-69e3bfc81b95"
+      }
+    }
+  }
+}
