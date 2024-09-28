@@ -19,7 +19,13 @@
         "foregroundImage": "./assets/favicon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.engmohamed.qurankareem"
+      "package": "com.engmohamed.qurankareem",
+      "minSdkVersion": 21,
+      "permissions": [
+        "INTERNET",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"

@@ -48,7 +48,7 @@ export default function SurahListPage({ navigation }) {
               { fontFamily: "ReemKuli-Medium", color: "#3498db" },
             ]}
           >
-            {allData.surahs.count.toLocaleString("ar-EG")}
+            {allData?.surahs?.count?.toLocaleString("ar-EG")}
           </Text>
         </View>
 
@@ -60,7 +60,7 @@ export default function SurahListPage({ navigation }) {
               { fontFamily: "ReemKuli-Medium", color: "#3498db" },
             ]}
           >
-            {allData.ayahs.count.toLocaleString("ar-EG")}
+            {allData?.ayahs?.count?.toLocaleString("ar-EG")}
           </Text>
         </View>
       </View>
@@ -79,34 +79,43 @@ export default function SurahListPage({ navigation }) {
             النوع
           </Text>
         </View>
-        {allData.surahs.references.map((surah) => (
-          <TouchableOpacity
-            key={surah.number}
-            style={styles.tableRow}
-            onPress={() =>
-              navigation.navigate("SingleSurah", { surahNumber: surah.number })
-            }
-          >
-            <Text style={[styles.tableCell, styles.numberCell]}>
-              {surah.number}
-            </Text>
-            <Text style={[styles.tableCell, styles.nameCell]}>
-              {surah.name}
-            </Text>
-            <Text
-              style={[
-                styles.tableCell,
-                styles.typeCell,
-                {
-                  color:
-                    surah.revelationType === "Meccan" ? "#3498db" : "#2ecc71",
-                },
-              ]}
+
+        <View
+          style={{
+            paddingBottom: 20,
+          }}
+        >
+          {allData?.surahs?.references?.map((surah) => (
+            <TouchableOpacity
+              key={surah.number}
+              style={styles.tableRow}
+              onPress={() =>
+                navigation.navigate("SingleSurah", {
+                  surahNumber: surah.number,
+                })
+              }
             >
-              {surah.revelationType === "Meccan" ? "مكية" : "مدنية"}
-            </Text>
-          </TouchableOpacity>
-        ))}
+              <Text style={[styles.tableCell, styles.numberCell]}>
+                {surah.number}
+              </Text>
+              <Text style={[styles.tableCell, styles.nameCell]}>
+                {surah.name}
+              </Text>
+              <Text
+                style={[
+                  styles.tableCell,
+                  styles.typeCell,
+                  {
+                    color:
+                      surah.revelationType === "Meccan" ? "#3498db" : "#2ecc71",
+                  },
+                ]}
+              >
+                {surah.revelationType === "Meccan" ? "مكية" : "مدنية"}
+              </Text>
+            </TouchableOpacity>
+          ))}
+        </View>
       </View>
     </ScrollView>
   );
